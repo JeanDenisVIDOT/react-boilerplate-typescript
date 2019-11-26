@@ -49,6 +49,12 @@ module.exports = {
     },
     {
       type: 'confirm',
+      name: 'wantLoadable',
+      default: false,
+      message: 'Do you want to load the container asynchronously?',
+    },
+    {
+      type: 'confirm',
       name: 'wantMessages',
       default: true,
       message: 'Do you want i18n messages (i.e. will this component use text)?',
@@ -171,8 +177,8 @@ module.exports = {
     if (data.wantLoadable) {
       actions.push({
         type: 'add',
-        path: '../../app/containers/{{properCase name}}/Loadable.ts',
-        templateFile: './component/loadable.ts.hbs',
+        path: '../../app/containers/{{properCase name}}/Loadable.tsx',
+        templateFile: './container/loadable.tsx.hbs',
         abortOnFail: true,
       });
     }
